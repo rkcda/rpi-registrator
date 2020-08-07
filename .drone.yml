@@ -7,13 +7,13 @@ platform:
   arch: arm 
 
 steps:
-  - name: test
+- name: test
   image: alpine
   commands:
   - echo hello
 
 
-  - name: build
+- name: build
   image: golang
   commands:
   - git clone --branch v2.0.0 https://github.com/coreos/go-etcd ${GOPATH}/src/github.com/coreos/go-etcd
