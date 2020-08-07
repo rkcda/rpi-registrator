@@ -10,7 +10,7 @@ steps:
 - name: submodules
   image: alpine/git
   commands:
-  - git submodule update --recursive --remote && cd registrator && git checkout -b swarm_mode
+  - git submodule update --recursive --remote && cd registrator && git checkout swarm_mode
 - name: docker  
   image: plugins/docker
   settings:
