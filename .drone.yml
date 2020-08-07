@@ -1,7 +1,13 @@
-#debug: true
+kind: pipeline
+type: docker
+name: default
+
+platform:
+  os: linux
+  arch: arm  
 
 build:
-  image: hypriot/rpi-golang:1.5
+  image: golang
   commands:
     - git clone --branch v2.0.0 https://github.com/coreos/go-etcd ${GOPATH}/src/github.com/coreos/go-etcd
     - export VERSION=master
@@ -16,25 +22,25 @@ build:
     - mkdir -p ${IMAGE_DIR}
     - ln -s ${IMAGE_DIR} /drone/src/buildresult/latest
 
-publish:
-  docker:
-#    environment:
-#      - DOCKER_LAUNCH_DEBUG=true
-    username: $$DOCKER_USER
-    password: $$DOCKER_PASS
-    email: $$DOCKER_EMAIL
-    repo: hypriot/rpi-registrator
-    tag:
-      - master
-    save:
-      file: /drone/src/buildresult/latest/registrator.tar
+# publish:
+#   docker:
+# #    environment:
+# #      - DOCKER_LAUNCH_DEBUG=true
+#     username: $$DOCKER_USER
+#     password: $$DOCKER_PASS
+#     email: $$DOCKER_EMAIL
+#     repo: 402/rpi-registrator
+#     tag:
+#       - master
+#     save:
+#       file: /drone/src/buildresult/latest/registrator.tar
 
-notify:
-  slack:
-    webhook_url: $$SLACK_WEBHOOK_URL
-    channel: buildstatus
-    username: Drone
-    when:
-      started: false
-      success: true
-      failure: true
+# notify:
+#   slack:
+#     webhook_url: $$SLACK_WEBHOOK_URL
+#     channel: buildstatus
+#     username: Drone
+#     when:
+#       started: false
+#       success: true
+#       failure: true
