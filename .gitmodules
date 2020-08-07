@@ -1,0 +1,4 @@
+[submodule "registrator"]
+	path = registrator
+	url = https://github.com/marcuslinke/registrator.git
+	branch = swarm-mode
