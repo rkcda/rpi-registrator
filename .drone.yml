@@ -9,8 +9,6 @@ platform:
 steps:
 - name: submodules
   image: alpine/git
-  commands:
-  - submodule update --recursive --remote 
 - name: docker  
   image: plugins/docker
   settings:
