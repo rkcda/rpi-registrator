@@ -16,7 +16,7 @@ steps:
   settings:
     username: docker
     password: test
-    repo: registry.402.at/rpi-registrator
+    repo: registry.402.at/402/rpi-registrator
     registry: https://registry.402.at
     auto_tag: true
     dockerfile: registrator/Dockerfile
