@@ -8,7 +8,7 @@ platform:
 
 steps:
 - name: submodules
-  image: registry.402.at/git
+  image: registry.402.at/rpi-alpine-git
   commands:
   - git submodule update --recursive --remote && cd registrator && git checkout swarm-mode
 - name: docker  
