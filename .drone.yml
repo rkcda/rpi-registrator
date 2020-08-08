@@ -8,13 +8,15 @@ platform:
 
 steps:
 - name: submodules
-  image: alpine/git
+  image: registry.402.at/git
+  commands:
+  - git submodule update --recursive --remote && cd registrator && git checkout swarm-mode
 - name: docker  
   image: plugins/docker
   settings:
-    username: drone
-    password: ^:zD.hsU#2>EBuzj
-    repo: 402/rpi-registrator
-    registry: registry.402.at:5000
+    username: docker
+    password: test
+    repo: registry.402.at/rpi-registrator
+    registry: https://registry.402.at
     auto_tag: true
     dockerfile: registrator/Dockerfile
