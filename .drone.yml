@@ -10,7 +10,7 @@ steps:
 - name: submodules
   image: registry.402.at/rpi-alpine-git
   commands:
-  - git submodule update --recursive --remote 
+  - git submodule update --recursive --remote && pwd
 - name: docker  
   image: plugins/docker
   settings:
@@ -19,7 +19,7 @@ steps:
     repo: registry.402.at/402/rpi-registrator
     registry: https://registry.402.at
     auto_tag: true
-    dockerfile: ./registrator/Dockerfile
+    dockerfile: registrator/Dockerfile
 
 image_pull_secrets:
 - dockerconfigjson    
