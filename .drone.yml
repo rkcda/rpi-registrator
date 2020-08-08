@@ -10,7 +10,7 @@ steps:
 - name: submodules
   image: registry.402.at/rpi-alpine-git
   commands:
-  - git submodule update --recursive && ls -alR
+  - git submodule update --recursive && cat .gitmodules
 - name: docker  
   image: plugins/docker
   settings:
