@@ -19,7 +19,6 @@ steps:
     repo: registry.402.at/402/rpi-registrator
     registry: https://registry.402.at
     auto_tag: true
-    dockerfile: registrator/Dockerfile
 
 image_pull_secrets:
 - dockerconfigjson    

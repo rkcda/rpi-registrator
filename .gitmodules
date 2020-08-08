@@ -1,4 +1,4 @@
 [submodule "registrator"]
 	path = registrator
 	url = https://github.com/rkcda/registrator.git
-	branch = testing
+	branch = swarm-mode
