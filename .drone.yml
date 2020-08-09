@@ -14,8 +14,10 @@ steps:
 - name: docker  
   image: plugins/docker
   settings:
-    username: docker
-    password: test
+    username:
+      from_secret: docker_username
+    password:
+      from_secret: docker_password
     repo: registry.402.at/402/rpi-registrator
     registry: https://registry.402.at
     auto_tag: true
